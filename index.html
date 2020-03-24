@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://www.viennarollerderby.org/urdumb/urdumb.html -->
+<html manifest="cache-manifest" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>URDUMB</title>
+    <link rel="stylesheet" href="css/urdumb.css">
+    
+  </head>
+  
+  <body id="body">
+
+    <!-- toggle fullscreen with a button -->
+    <div id="fullscreenToggler" class="startHUD bottomBound">
+      <input type="button" id="fullscreenToggleButton" value="toggle fullscreen">
+    </div>
+    
+    <!-- minimalistic GUI controls -->
+    <div id="popupGUIStarter" class="startHUD rightBound">
+      <input type="button" id="showPopupGUIButton" value="...">
+    </div>
+    <div id="popupGUI" class="HUD noSelection rightBound">
+      <fieldset name="controlFields">
+        <legend class="alignRight">URDUMB look</legend>
+        <input type="button" id="hidePopupGUIButton" value="Hide" class="alignRight boundRight">
+        <br>
+        <div class="HUDcontent">
+          <input type="checkbox" id="checkbox-showpack" value="showpack">
+          Highlight pack skaters<br>
+          <input type="checkbox" id="checkbox-shownopack" value="shownopack">
+          Highlight no-pack skaters<br>
+          <input type="checkbox" id="checkbox-showOOP" value="showOOP">
+          Highlight out-of-play skaters<br>
+          <input type="checkbox" id="checkbox-showOOB" value="showOOB">
+          Highlight out-of-bounds skaters<br>
+          <input type="checkbox" id="checkbox-showdown" value="showdown">
+          Highlight downed skaters<br>
+          <input type="checkbox" id="checkbox-showEZ" value="showEZ">
+          Show engagement zone<br>
+          <input type="checkbox" id="checkbox-shownumbers" value="shownumbers">
+          Show skater numbers<br>
+          <input type="checkbox" id="checkbox-showzebras" value="showzebras">
+          Show skating officials<br>
+          <input type="checkbox" id="checkbox-showmiddleline" value="showmiddleline">
+          Show middle line<br>
+          <input type="button" id="button-fastrewind" value="&lt;&lt;">
+          <input type="button" id="button-rewind" value="&lt;">
+          Browse history
+          <input type="button" id="button-forward" value="&gt;">
+          <input type="button" id="button-fastforward" value="&gt;&gt;">
+          <br>
+          <input type="button" id="button-resethistory" value="reset history">
+          <br>
+          <input type="button" id="button-savebookmark" value="save bookmark">
+          <select id="select-bookmarks">
+            <option value="0">1</option>
+            <option value="1">2</option>
+            <option value="2">3</option>
+            <option value="3">4</option>
+            <option value="4">5</option>
+            <option value="5">6</option>
+            <option value="6">7</option>
+            <option value="7">8</option>
+            <option value="8">9</option>
+            <option value="9">10</option>
+            <option value="10">11</option>
+            <option value="11">12</option>
+            <option value="12">13</option>
+            <option value="13">14</option>
+            <option value="14">15</option>
+            <option value="15">16</option>
+            <option value="16">17</option>
+            <option value="17">18</option>
+            <option value="18">19</option>
+            <option value="19">20</option>
+          </select>
+          <input type="button" id="button-loadbookmark" value="load bookmark">
+          <br>
+          <input type="color" id="button-colour-teamA"> Team A colour
+          <br>
+          <input type="color" id="button-colour-teamB"> Team B colour
+          <br>
+        </div>
+      </fieldset>      
+    </div>
+
+    <!-- cheat sheet for keyboard shortcuts -->
+    <div id="cheatSheetStarter" class="startHUD leftBound">
+      <input type="button" id="showCheatSheetButton" value="?">
+    </div>
+    <div id="cheatSheet" class="HUD leftBound noSelection">
+      <fieldset>
+        <legend class="alignRight">Cheat sheet</legend>
+        <input type="button" id="hideCheatSheetButton" value="Hide">
+        <div class="HUDcontent">
+          <dl>
+            <dt><kbd>C</kbd></dt><dd>Toggle cheat sheet</dd>
+            <dt><kbd>[space]</kbd></dt><dd>Toggle pack highlighting</dd>
+            <dt><kbd>F</kbd></dt><dd>Toggle fullscreen mode</dd>
+            <dt><kbd>N</kbd></dt><dd>Toggle no-pack highlighting</dd>
+            <dt><kbd>P</kbd></dt><dd>Toggle out-of-play highlighting</dd>
+            <dt><kbd>B</kbd></dt><dd>Toggle out-of-bounds highlighting</dd>
+            <dt><kbd>D</kbd></dt><dd>Toggle downed skaters highlighting</dd>
+            <dt><kbd>E</kbd></dt><dd>Toggle engagement zone</dd>
+            <dt><kbd>M</kbd></dt><dd>Toggle skater numbers</dd>
+            <dt><kbd>Z</kbd></dt><dd>Toggle skating officials</dd>
+            <dt><kbd>V</kbd></dt><dd>Toggle middle line</dd>
+            <dt><kbd>S</kbd></dt><dd>Skate (faster with [shift])</dd>
+            <dt><kbd>R</kbd></dt><dd>Skate backwards (faster with [shift])</dd>
+            <dt><kbd>0-9</kbd></dt><dd>Load bookmark 0-9 (+10 with [alt])</dd>
+            <dt><kbd>[shift] 0-9</kbd></dt>
+            <dd>Save bookmark 0-9 (+10 with [alt])</dd>
+            <dt><kbd>[left-right] or mouse wheel</kbd></dt>
+            <dd>Navigate through history</dd>
+            <dt><kbd>[alt] mouse wheel</kbd></dt>
+            <dd>Navigate through bookmarks</dd>
+            <dt><kbd>[esc]</kbd></dt><dd>Reset history</dd>
+            <dt><kbd>I</kbd></dt><dd>Toggle GUI controls</dd>
+            <dt><kbd>G</kbd></dt><dd>Dump screenshot</dd><dd></dd>
+            <dt><kbd>H</kbd></dt><dd>Start/stop recording</dd><dd></dd>
+          </dl>
+        </div>
+      </fieldset>
+    </div>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid meet" viewBox="-50 -50 980 650" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:urdumb="urdumb">
+      <!-- normal box is 0 0 880 550 but we want some padding -->
+
+      <defs>
+        <!-- actual size is set from mouse.js -->
+        <circle id="skater" class="skater" cx="0" cy="0" r="13"></circle>
+        <!-- <circle id="skaterSelection" class="selection" -->
+                     <!--         cx="0" cy="0" r="13" /> -->
+                     <g id="player" class="player">
+                       <use xlink:href="#skater" x="0" y="0"></use>
+                     </g>
+                     <rect id="pivotStripe" x="-11" y="-4" width="22" height="8" rx="3" ry="3"></rect>
+                     <circle id="blockerMark" cx="0" cy="0" r="8"></circle>
+                     <polygon id="star" points="-0.0, 2.5
+                                      -0.5877852522924731, 0.8090169943749475
+                                      -2.3776412907378837, 0.7725424859373686
+                                      -0.9510565162951536, -0.30901699437494734
+                                      -1.4694631307311832, -2.022542485937368
+                                      0, -1.0
+                                      1.4694631307311825, -2.0225424859373686
+                                      0.9510565162951535, -0.30901699437494756
+                                      2.377641290737884, 0.7725424859373681
+                                      0.5877852522924732, 0.8090169943749473" transform="scale(4), rotate(180)"></polygon>
+                     <g id="blocker" class="blockerTemplate">
+                       <use xlink:href="#player" x="0" y="0"></use>
+                       <use xlink:href="#blockerMark" x="0" y="0"></use>
+                     </g>
+                     <g id="blocker1" class="blockerTemplate1">
+                       <use xlink:href="#blocker" x="0" y="0"></use>
+                       <text id="blockerNumber1" class="blockerNumber">1</text>
+                     </g>
+                     <g id="blocker2" class="blockerTemplate2">
+                       <use xlink:href="#blocker" x="0" y="0"></use>
+                       <text id="blockerNumber2" class="blockerNumber">2</text>
+                     </g>
+                     <g id="blocker3" class="blockerTemplate3">
+                       <use xlink:href="#blocker" x="0" y="0"></use>
+                       <text id="blockerNumber3" class="blockerNumber">3</text>
+                     </g>
+                     <g id="pivot" class="pivotTemplate">
+                       <use xlink:href="#player" x="0" y="0"></use>
+                       <use xlink:href="#pivotStripe" x="0" y="0"></use>
+                     </g>
+                     <g id="jammer" class="jammerTemplate">
+                       <use xlink:href="#player" x="0" y="0"></use>
+                       <use xlink:href="#star" x="0" y="0"></use>
+                     </g>
+                     <pattern id="refStripes" patternUnits="userSpaceOnUse" x="0" y="0" width="2" height="1" patternTransform="translate(1.5, 0), scale(3.4), rotate(0, 0, 0)">
+                       <rect x="0" y="0" width="1" height="1" fill="black"></rect>
+                       <rect x="1" y="0" width="1" height="1" fill="white"></rect>
+                     </pattern>
+                     
+                     <g id="packRef">
+                       <use xlink:href="#skater" x="0" y="0" fill="url(#refStripes)"></use>
+                     </g>
+                     <g id="jammerRef">
+                       <use xlink:href="#packRef" x="0" y="0"></use>
+                       <use xlink:href="#star" x="0" y="0" class="JRStar"></use>
+                     </g>
+                     <line x1="0" y1="-35" x2="0" y2="-105" id="tenFootMark"></line>
+      </defs>
+
+      <text id="contextText" x="50" y="50" font-size="50" class="invisible">
+        hop
+      </text>
+      
+      <path class="engagementZone" id="engagementZone" d="M 693.3207618234168,177.57896393796864 A 125,125 0 0,0 615,150 L 311.9259338378906,150 L 311.9259338378906,17.318518066406256 L 615,0 A 265,265 0 0,1 784.6046729992948,64.03342383458298 Z"></path>
+      
+      <path class="track" id="pivotLine" d="
+               M 265,150
+               L 265,20
+               "></path>
+      <path class="track" id="jammerLine" d="
+               M 565,150
+               L 565,4
+               "></path>
+      <!-- (0,0) is the top left corner; track centre is at (440, 275) -->
+      <path class="track" id="track" d="
+               M 265,550
+               L 615,530
+               A 265,265 0 1,0 615,0
+               L 265,20
+               A 265,265 0 1,0 265,550
+               M 265,400
+               L 615,400
+               A 125,125 0 1,0 615,150
+               L 265,150
+               A 125,125 0 1,0 265,400
+               "></path>
+
+      <g id="tenFootMarks" class="mark">
+        <!-- first straightaway -->
+        <use xlink:href="#tenFootMark" class="mark" x="365" y="150"></use>
+        <use xlink:href="#tenFootMark" class="mark" x="465" y="150"></use>
+        <!-- second straightaway -->
+        <use xlink:href="#tenFootMark" class="mark" x="615" y="400" transform="rotate(180, 615, 400)"></use>
+        <use xlink:href="#tenFootMark" class="mark" x="515" y="400" transform="rotate(180, 515, 400)"></use>
+        <use xlink:href="#tenFootMark" class="mark" x="415" y="400" transform="rotate(180, 415, 400)"></use>
+        <use xlink:href="#tenFootMark" class="mark" x="315" y="400" transform="rotate(180, 315, 400)"></use>
+        <!-- first curve -->
+        <use xlink:href="#tenFootMark" class="mark" x="265" y="150" transform="rotate(-32.719403590194666, 265, 275)"></use>
+        <use xlink:href="#tenFootMark" class="mark" x="265" y="150" transform="rotate(-65.438807180389333, 265, 275)"></use>
+        <use xlink:href="#tenFootMark" class="mark" x="265" y="150" transform="rotate(-98.158210770583992, 265, 275)"></use>
+        <use xlink:href="#tenFootMark" class="mark" x="265" y="150" transform="rotate(-130.87761436077867, 265, 275)"></use>
+        <use xlink:href="#tenFootMark" class="mark" x="265" y="150" transform="rotate(-163.59701795097334, 265, 275)"></use>
+        <!-- second curve -->
+        <use xlink:href="#tenFootMark" class="mark" x="615" y="150" transform="rotate(147.28059640980533, 615, 275)"></use>
+        <use xlink:href="#tenFootMark" class="mark" x="615" y="150" transform="rotate(114.56119281961067, 615, 275)"></use>
+        <use xlink:href="#tenFootMark" class="mark" x="615" y="150" transform="rotate(81.841789229416008, 615, 275)"></use>
+        <use xlink:href="#tenFootMark" class="mark" x="615" y="150" transform="rotate(49.122385639221335, 615, 275)"></use>
+        <use xlink:href="#tenFootMark" class="mark" x="615" y="150" transform="rotate(16.402982049026662, 615, 275)"></use>
+      </g>
+
+      <path class="virtualDistanceLine invisible" id="virtualDistanceLine" d="
+                 M 265,80
+                 A 185,185 0 1,0 265,470
+                 L 615,470
+                 A 185,185 0 1,0 615, 80
+                 L 265,80
+                 "></path>
+      
+      <use xlink:href="#pivot" class="teamA movable blocker pack" x="546" y="22" id="pivotA" urdumb:status="pack" urdumb:team="A" urdumb:stance="upright" urdumb:currentlap="0" title="lap 0"></use>
+      <use xlink:href="#pivot" class="teamB movable blocker pack" x="516.3464015941298" y="127.2989744340809" id="pivotB" urdumb:status="pack" urdumb:team="B" urdumb:stance="upright" urdumb:currentlap="0" title="lap 0"></use> 
+      <use xlink:href="#blocker1" class="teamA movable blocker" x="391.4085693359375" y="94.19950866699219" id="blockerA1" urdumb:status="" urdumb:team="A" urdumb:stance="upright" urdumb:currentlap="0" title="lap 0"></use>
+      <use xlink:href="#blocker2" class="teamA movable blocker pack" x="544.109063995613" y="102.73684853414876" id="blockerA2" urdumb:status="pack" urdumb:team="A" urdumb:stance="upright" urdumb:currentlap="0" title="lap 0"></use>
+      <use xlink:href="#blocker3" class="teamA movable blocker pack" x="547.0421741852568" y="134.2500382470436" id="blockerA3" urdumb:status="pack" urdumb:team="A" urdumb:stance="upright" urdumb:currentlap="0" title="lap 0"></use>
+      <use xlink:href="#blocker1" class="teamB movable blocker" x="324.3180847167969" y="42.07893371582031" id="blockerB1" urdumb:status="" urdumb:team="B" urdumb:stance="upright" urdumb:currentlap="0" title="lap 0"></use>
+      <use xlink:href="#blocker2" class="teamB movable blocker" x="352.8077677941186" y="72.85581451782942" id="blockerB2" urdumb:status="" urdumb:team="B" urdumb:stance="upright" urdumb:currentlap="0" title="lap 0"></use>
+      <use xlink:href="#blocker3" class="teamB movable blocker pack" x="511.9259338378906" y="24.232406616210938" id="blockerB3" urdumb:status="pack" urdumb:team="B" urdumb:stance="upright" urdumb:currentlap="0" title="lap 0"></use>
+      <use xlink:href="#jammer" class="teamA movable jammer" x="559.4769897460938" y="62.239864349365234" id="jammerA" urdumb:status="" urdumb:team="A" urdumb:stance="upright" urdumb:currentlap="0" title="lap 0"></use>
+      <use xlink:href="#jammer" class="teamB movable jammer" x="582.8451346169154" y="100.69383713753597" id="jammerB" urdumb:status="" urdumb:team="B" urdumb:stance="upright" urdumb:currentlap="0" title="lap 0"></use>
+      <!-- zebras on the track!! -->
+      <use xlink:href="#packRef" class="zebra movable IPR" x="400.0523681640625" y="205.87530517578125" id="IPR1" title="lap null"></use>
+      <use xlink:href="#packRef" class="zebra movable IPR" x="579" y="228" id="IPR2" title="lap null"></use>
+      <use xlink:href="#packRef" class="zebra movable OPR" x="260" y="-20" id="OPR1" title="lap null"></use>
+      <use xlink:href="#packRef" class="zebra movable OPR" x="476" y="-22" id="OPR2" title="lap null"></use>
+      <use xlink:href="#packRef" class="zebra movable OPR" x="566" y="-30" id="OPR3" title="lap null"></use>
+      <use xlink:href="#jammerRef" class="teamA zebra movable JR" x="569" y="185" id="JRA" title="lap null"></use>
+      <use xlink:href="#jammerRef" class="teamB zebra movable JR" x="594" y="169" id="JRB" title="lap null"></use>
+
+      <circle id="recButton" class="invisible" cx="860" cy="-50" r="21">
+        <animate attributeName="visibility" from="hidden" to="visible" dur="2" repeatCount="indefinite"></animate>
+      </circle>
+
+      <rect id="selectionRectangle" class="selection invisible" x="0" y="0" width="300" height="200"></rect>    
+
+    </svg>
+
+    
+    <script type="text/javascript" src="js/sethtmldoc.js"></script>
+    <script type="text/javascript" src="js/storage.js"></script>
+    <script type="text/javascript" src="js/globals.js"></script>
+    <script type="text/javascript" src="js/classops.js"></script>
+    <script type="text/javascript" src="js/math.js"></script>
+    <script type="text/javascript" src="js/motion.js"></script>
+    <script type="text/javascript" src="js/positions.js"></script>
+    <script type="text/javascript" src="js/persistence.js"></script>
+    <script type="text/javascript" src="js/keys.js"></script>
+    <script type="text/javascript" src="js/dump.js"></script>
+    <script type="text/javascript" src="js/interaction.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/popupcontrols.js"></script>
+    <script type="text/javascript" src="js/touch.js"></script>
+    <script type="text/javascript" src="js/fullscreen.js"></script>
+  
+
+
+
+</body></html>
