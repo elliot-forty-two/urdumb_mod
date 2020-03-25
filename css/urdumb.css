@@ -59,6 +59,12 @@ path.track {
     fill-rule: evenodd;
 }
 
+path#trackBoundary {
+    fill: none;
+    stroke: white;
+    stroke-width: 3;
+}
+
 path#pivotLine, path#jammerLine {
     stroke: white;
     stroke-width: 3;
