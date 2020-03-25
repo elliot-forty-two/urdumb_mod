@@ -27,13 +27,25 @@ body {
     top: 0%;
     width: 100%;
     height: 100%;
+    font-size: 100%;
+    font-family: sans-serif;
+}
+
+input {
+    background-color: #1234bb;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 100%;
 }
 
 svg {
     /* only works when svg is inlined in html - used for debugging */
     /* outline: 2px solid #f00; */
     /* background: white; */
-    background: rgba(20,20,220,.4);
+    background: rgba(127,140,206,1);
     display: block;
     width: 100%;
     height: 100%;
@@ -41,10 +53,15 @@ svg {
 
 path.track {
     stroke: #1234bb;
-    fill: orange;
-    fill-opacity: 0;
-    stroke-width: 4;
+    fill: #727db8;
+    fill-opacity: 1;
+    stroke-width: 0;
     fill-rule: evenodd;
+}
+
+path#pivotLine, path#jammerLine {
+    stroke: white;
+    stroke-width: 3;
 }
 
 path.virtualDistanceLine {
@@ -59,11 +76,7 @@ path.virtualDistanceLine {
     font-weight: bold;
     dominant-baseline: central;
     text-anchor: middle;
-    fill: white;
-}
-
-use.teamB > .blockerNumber {
-    fill: blue;
+    fill: grey;
 }
 
 .invisible {
@@ -72,7 +85,7 @@ use.teamB > .blockerNumber {
 }
 
 .mark {
-    stroke: #1234bb;
+    stroke: white;
     fill: none;
     stroke-width: 1.5;
 }
@@ -97,12 +110,12 @@ use.teamB > .blockerNumber {
 }
 
 .teamA {
-    stroke: #ffbb00; /* colour for team A */
+    stroke: #000000; /* colour for team A */
     fill: #000000; /* colour for team A */
 }
 
 .teamB {
-    stroke: #bb00bb; /* colour for team B */
+    stroke: #ffffff; /* colour for team B */
     fill: #ffffff; /* colour for team B */
 }
 
@@ -132,7 +145,6 @@ use.teamB > .blockerNumber {
 
 .zebra {
     stroke: black;
-    display: none;
 }
 
 .JRStar {

@@ -92,12 +92,12 @@ defaultConfig = {
     'showdown': true,
     'showOOB': true,
     'shownopack': true,
-    'shownumbers': true,
+    'shownumbers': false,
     'showEZ': true,
     'showmiddleline': false,
-    'showzebras': true,
-    'teamAcolour': "#ffbb00",
-    'teamBcolour': "#bb00bb"
+    'showzebras': false,
+    'teamAcolour': "#ffffff",
+    'teamBcolour': "#000000"
 }
 
 config = {};
